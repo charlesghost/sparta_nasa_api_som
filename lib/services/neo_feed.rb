@@ -3,7 +3,7 @@ require 'json'
 
 class NeoFeedService
 	include HTTParty
-    
+	
 	base_uri 'https://api.nasa.gov/neo/rest/v1/feed?'
 
 	def initialize
@@ -12,7 +12,7 @@ class NeoFeedService
 
 	def get_neo_feed
 		today = Time.now.strftime("%Y-%m-%d")
-      	@neo_feed_data = JSON.parse(self.class.get("start_date=#{today}&end_date=#{today}&api_key=#{@api_key}").body)
+		@neo_feed_data = JSON.parse(self.class.get("start_date=#{today}&end_date=#{today}&api_key=#{@api_key}").body)
 	end 
 
 	def get_neo_feed_results
@@ -45,7 +45,7 @@ class NeoFeedService
 
 	def get_date
 		today = Time.now.strftime("%Y-%m-%d")
-        get_near_earth_objects[today]
+		get_near_earth_objects[today]
 	end
 
 	def get_date_links

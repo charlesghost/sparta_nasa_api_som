@@ -6,7 +6,7 @@ describe 'NeoLookupService' do
 
 		before(:all) do
 			@neolookupservice = NasaService.new.neo_lookup_service
-            @neolookupservice.get_neo_lookup('3542519')
+			@neolookupservice.get_neo_lookup('3542519')
 		end 
 
 		it 'should respond with an Hash of results' do 
@@ -14,35 +14,35 @@ describe 'NeoLookupService' do
 		end 
 
 		it 'should respond with an hash of results from links' do
-            expect(@neolookupservice.get_neo_lookup_links).to be_kind_of Hash
+			expect(@neolookupservice.get_neo_lookup_links).to be_kind_of Hash
 		end 
 
 		it 'should return a self string' do
-            expect(@neolookupservice.get_self).to be_kind_of String
+			expect(@neolookupservice.get_self).to be_kind_of String
 		end 
 
 		it 'should return a neo reference id string' do
-            expect(@neolookupservice.get_neo_reference_id).to be_kind_of String
+			expect(@neolookupservice.get_neo_reference_id).to be_kind_of String
 		end
 
 		it 'should return a neo name id string' do 
-            expect(@neolookupservice.get_name).to be_kind_of String
+			expect(@neolookupservice.get_name).to be_kind_of String
 		end
 
 		it 'should return a neo nasa jpl url string' do 
-            expect(@neolookupservice.get_nasa_jpl_url).to be_kind_of String
+			expect(@neolookupservice.get_nasa_jpl_url).to be_kind_of String
 		end 
 
 		it 'should return a neo absolute magnitude as a float' do
-            expect(@neolookupservice.get_absolute_magnitude_h).to be_kind_of Float
+			expect(@neolookupservice.get_absolute_magnitude_h).to be_kind_of Float
 		end 
 
 		it 'should return a neo estimated diameter as a hash' do 
-            expect(@neolookupservice.get_estimated_diameter_all).to be_kind_of Hash
+			expect(@neolookupservice.get_estimated_diameter_all).to be_kind_of Hash
 		end
 
 		it 'should return a neo diameter km as a Hash of results' do
-            expect(@neolookupservice.get_km).to be_kind_of Hash
+			expect(@neolookupservice.get_km).to be_kind_of Hash
 		end
 
 		it 'should return a neo estimated diameter km min as Float' do
@@ -164,7 +164,7 @@ describe 'NeoLookupService' do
 		end
 
 		it 'should return a Near Earth Objects orbiting body as a string' do
-            @neolookupservice.get_orbiting_body.each do |h|
+			@neolookupservice.get_orbiting_body.each do |h|
 				expect(h).to be_kind_of String
 			end
 		end

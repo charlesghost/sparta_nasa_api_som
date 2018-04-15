@@ -14,7 +14,7 @@ describe 'NeoBrowseService' do
 		end 
 
 		it 'Links should respond with an Hash of Results' do
-            expect(@neobrowseservice.get_neo_browse_links).to be_kind_of Hash
+			expect(@neobrowseservice.get_neo_browse_links).to be_kind_of Hash
 		end
 
 		it 'should return Next as a String' do
@@ -38,7 +38,7 @@ describe 'NeoBrowseService' do
 		end
 
 		it 'should return Page total pages as an Integer' do
-            expect(@neobrowseservice.get_total_pages).to be_kind_of Integer
+			expect(@neobrowseservice.get_total_pages).to be_kind_of Integer
 		end
 
 		it 'should return Page number as an Integer' do
@@ -68,9 +68,9 @@ describe 'NeoBrowseService' do
 		end
 
 		it 'should return Near Earth Objects neo name as a String' do
-            @neobrowseservice.get_neo_name.each do |h|
-            	expect(h).to be_a String
-            end
+			@neobrowseservice.get_neo_name.each do |h|
+				expect(h).to be_a String
+			end
 		end
 
 		it 'should return Near Earth Objects neo jpl_url as a String' do

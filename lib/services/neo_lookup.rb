@@ -15,7 +15,7 @@ class NeoLookupService
 	end
 
 	def get_neo_lookup_result
-        @neo_lookup_data
+		@neo_lookup_data
 	end
 
 	def get_neo_lookup_links
