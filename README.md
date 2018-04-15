@@ -10,7 +10,7 @@ Features tested:
 3. Neo Browse
 
 
-##Installation instructions
+## Installation instructions
 
     clone repository: https://github.com/cjoshua15/sparta_nasa_api_som.git    
     run rspec on the terminal to run the tests
