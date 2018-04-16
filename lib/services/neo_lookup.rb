@@ -1,17 +1,16 @@
 require 'httparty'
 require 'json'
+require 'dotenv'
 
 class NeoLookupService
 	include HTTParty
 
 	base_uri 'https://api.nasa.gov'
 
-	def initialize
-		@api_key = 'SiRbFhwllRoiUXtKs1wbb1PuXiWXz0BEui6zb5Cu'
-	end
+	Dotenv.load
 
 	def get_neo_lookup(id)
-		@neo_lookup_data = JSON.parse(self.class.get("/neo/rest/v1/neo/#{id}?&api_key=#{@api_key}").body)
+		@neo_lookup_data = JSON.parse(self.class.get("/neo/rest/v1/neo/#{id}?&api_key=#{ENV['API_KEY']}").body)
 	end
 
 	def get_neo_lookup_result

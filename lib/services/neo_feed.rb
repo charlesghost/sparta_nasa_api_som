@@ -1,18 +1,17 @@
 require 'httparty'
 require 'json'
+require 'dotenv'
 
 class NeoFeedService
 	include HTTParty
 	
 	base_uri 'https://api.nasa.gov/neo/rest/v1/feed?'
 
-	def initialize
-		@api_key = 'SiRbFhwllRoiUXtKs1wbb1PuXiWXz0BEui6zb5Cu'
-	end
+	Dotenv.load
 
 	def get_neo_feed
-		today = Time.now.strftime("%Y-%m-%d")
-		@neo_feed_data = JSON.parse(self.class.get("start_date=#{today}&end_date=#{today}&api_key=#{@api_key}").body)
+		@today = Time.now.strftime("%Y-%m-%d")
+		@neo_feed_data = JSON.parse(self.class.get("start_date=#{@today}&end_date=#{@today}&api_key=#{ENV['API_KEY']}").body)
 	end 
 
 	def get_neo_feed_results
@@ -44,8 +43,7 @@ class NeoFeedService
 	end
 
 	def get_date
-		today = Time.now.strftime("%Y-%m-%d")
-		get_near_earth_objects[today]
+		get_near_earth_objects[@today]
 	end
 
 	def get_date_links

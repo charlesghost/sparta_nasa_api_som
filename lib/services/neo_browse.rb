@@ -1,17 +1,16 @@
 require 'httparty'
 require 'json'
+require 'dotenv'
 
 class NeoBrowseService
 	include HTTParty
 
 	base_uri 'https://api.nasa.gov/neo/rest/v1/neo/browse?'
 
-	def initialize
-		@api_key = 'SiRbFhwllRoiUXtKs1wbb1PuXiWXz0BEui6zb5Cu'
-	end
+	Dotenv.load
 
 	def get_neo_browse
-		@neo_browse_data = JSON.parse(self.class.get("&api_key=#{@api_key}").body)
+		@neo_browse_data = JSON.parse(self.class.get("&api_key=#{ENV['API_KEY']}").body)
 	end
 
 	def get_neo_browse_results
